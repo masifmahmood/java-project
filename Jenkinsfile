@@ -52,7 +52,7 @@ pipeline {
 
         stage("Test on Debian") {
             agent {
-                docker 'openjdk:8u171-jdk-nanoserver'
+                docker 'oracle/openjdk'
             }
 
             steps {
