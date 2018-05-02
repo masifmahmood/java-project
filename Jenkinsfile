@@ -93,7 +93,7 @@ pipeline {
                 echo 'Merging development into master Branch'
                 sh 'git merge development'
                 echo 'Pushing to orgin master'
-                sh 'git push orgin master'
+                sh 'git push origin master'
             }
         }
     }
