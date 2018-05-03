@@ -114,17 +114,15 @@ pipeline {
                     )
                 }
             }
-
-        }
-
-        post {
-            failure {
-                emailext(
-                    subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Failed!",
-                    body: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Failed! Please check the logs.",
-                    to: "masifmahmood@gmail.com"
-                )
-            }
         }
     }
+    post {
+        failure {
+            emailext(
+                subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Failed!",
+                body: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Failed! Please check the logs.",
+                to: "masifmahmood@gmail.com"
+            )
+        }
+    }    
 }
