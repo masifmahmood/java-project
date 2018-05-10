@@ -7,6 +7,14 @@ pipeline {
     }
 
     stages {
+        stage('Say Hello') {
+            agent any
+
+            steps {
+                sayHello 'Ausome Student'
+            }
+        }
+
         stage('Unit Tests') {
             agent {
                 label 'apache'
@@ -124,5 +132,5 @@ pipeline {
                 to: "masifmahmood@gmail.com"
             )
         }
-    }    
+    }
 }
