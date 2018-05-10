@@ -15,6 +15,20 @@ pipeline {
             }
         }
 
+        stage ('Git Info') {
+            agent any
+
+            steps {
+                echo "My Branch: ${env.BRANCH_NAME}"
+
+                script {
+                    def myLib = new linuxacademy.git.gitstuff();
+
+                    echo "My Commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")}"
+                }
+            }
+        }
+
         stage('Unit Tests') {
             agent {
                 label 'apache'
