@@ -1,3 +1,5 @@
 file added on remote
 new line added
 another change
+line added on local
+latest change
